@@ -8,7 +8,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
 		<script type="text/javascript">
-			$(function() 
+			$(function()
 				{
 					var jumbo = $('#jumbo');
 					var title = $('#jumbo-title');
@@ -17,10 +17,11 @@
 				  	var backgrounds = ['url(img/earth2.jpg)', 'url(img/rocketJumbo.jpg)', 'url(img/supernova.jpg)'];
 					var titles = ["Titel 1", "Titel 2", "Titel 3"];
 					var texts = ["Photoshopped picture of earth like planet.", "Picture of a rocket.", "Supernova!"]
-					
+
 					<?php
 						if (isset($_GET['image']) && isset($_GET['title']) && isset($_GET['text']))
 						{
+							echo hola;
 							$image = $_GET['image'];
 							$title = $_GET['title'];
 							$text = $_GET['text'];
@@ -34,7 +35,7 @@
 
 					var current = 0;
 
-					function nextBackground() 
+					function nextBackground()
 					{
 						jumbo.css('background-image', backgrounds[current = ++current % backgrounds.length]);
 					  	title.html(titles[current]);
