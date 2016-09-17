@@ -25,6 +25,7 @@
 							$title = $_GET['title'];
 							$text = $_GET['text'];
 
+							echo 'hej';
 
 							echo 'backgrounds.push("url(img/'. $image .'.png)");';
 							echo 'titles.push("'.$title.'");';
