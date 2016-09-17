@@ -21,12 +21,9 @@
 					<?php
 						if (isset($_GET['image']) && isset($_GET['title']) && isset($_GET['text']))
 						{
-							echo hola;
 							$image = $_GET['image'];
 							$title = $_GET['title'];
 							$text = $_GET['text'];
-
-							echo 'hej';
 
 							echo 'backgrounds.push("url(img/'. $image .'.png)");';
 							echo 'titles.push("'.$title.'");';
