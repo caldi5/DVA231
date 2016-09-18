@@ -65,7 +65,10 @@
 							<li><a href="#">NASA Audiences</a></li>
 							<?php
 							if(isset($_SESSION["username"]))
+							{
+								echo "<li><a href=\"admin.php\">Admin Page</a></li>";
 								echo "<li><a href=\"logout.php\">Logout</a></li>";
+							}
 							else
 								echo "<li><a href=\"login.php\">Login</a></li>";
 							?>
