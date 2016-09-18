@@ -60,7 +60,7 @@
 							<li><a href="#">NASA Audiences</a></li>
 						</ul>
 					</div>
-					<div class="row visible-lg">
+					<div class="row">
 							<ul class="menu nav navbar-nav navbar-right">
 								<li><a href="#">International Space Station</a></li>
 								<li><a href="#">Journey to Mars</a></li>
