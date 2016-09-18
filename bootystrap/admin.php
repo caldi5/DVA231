@@ -18,7 +18,7 @@
 				<div class="container">
 					<ul class="nav navbar-nav navbar-left">
 						<li><a href="index.php">Index</a></li>
-					</ul>>
+					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="logout.php">Logout</a></li>";
 					</ul>
@@ -28,6 +28,14 @@
 		<div class="container">
 			<h1>New Newstory</h1>
 			<form method="post">
+				<div class="form-group">
+				  <label>Select news type:</label>
+				  <select class="form-control" name="newsType">
+				    <option>Jumbotron</option>
+				    <option>Double</option>
+				    <option>Single</option>
+				  </select>
+				</div>
 				<div class="form-group">
 					<label>Title:</label>
 					<input type="text" class="form-control" name="title" placeholder="Chose a title" required autofocus>
@@ -48,9 +56,8 @@
 				    <option>Category 3</option>
 				    <option>Category 4</option>
 				  </select>
-				</div>
-
-				<button class="btn btn-lg btn-primary btn-block" type="submit" name="news upload">Submit</button>
+				</div>	
+				<button class="btn btn-lg btn-primary btn-block" type="submit" name="newsUpload">Submit</button>
 			</form>
 		</div>
 	</body>
