@@ -16,8 +16,8 @@
 			.a
 			{
 				background-color: white;
-				margin-bottom: 15px;
-				height: 300px;
+				margin-bottom: 20px;
+				height: 250px;
 			}
 		</style>
 	</head>
