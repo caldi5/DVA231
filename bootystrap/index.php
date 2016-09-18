@@ -20,6 +20,14 @@
 				margin-bottom: 20px;
 				height: 300px;
 			}
+			.menu li
+			{
+				background-color: #555;
+			}
+			.menu li:hover
+			{
+				background-color: #b7b7b7;
+			}
 		</style>
 	</head>
 	<body>
@@ -44,7 +52,7 @@
 						</ul>
 					</div>
 					<div class="row">
-						<ul class="nav navbar-nav">
+						<ul class="menu nav navbar-nav navbar-right">
 							<li><a href="#">International Space Station</a></li>
 							<li><a href="#">Journey to Mars</a></li>
 							<li><a href="#">Earth</a></li>
