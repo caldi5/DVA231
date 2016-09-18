@@ -6,7 +6,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>NASA - Bootstrap</title>
 		<link href="css/bootstrap.css" rel="stylesheet">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
 		<style type="text/css">
 			body
@@ -57,7 +56,7 @@
 							<li><a href="#">NASA Audiences</a></li>
 						</ul>
 					</div>
-					<div class="row">
+					<div class="row hidden-phone hidden-tablet">
 						<ul class="menu nav navbar-nav navbar-right">
 							<li><a href="#">International Space Station</a></li>
 							<li><a href="#">Journey to Mars</a></li>
@@ -107,5 +106,9 @@
 				</div>
 			</div>
 		</div>
+
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script src="js/bootstrap.js"></script>
 	</body>
 </html>
