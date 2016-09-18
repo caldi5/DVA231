@@ -33,6 +33,7 @@
 			}
 			.menu li a
 			{
+				/*font-size: 0.83vw;*/
 				padding: 5px 10px;
 			}
 		</style>
