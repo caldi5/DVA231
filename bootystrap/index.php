@@ -56,18 +56,18 @@
 							<li><a href="#">NASA Audiences</a></li>
 						</ul>
 					</div>
-					<div class="row hidden-phone hidden-tablet">
-						<ul class="menu nav navbar-nav navbar-right">
-							<li><a href="#">International Space Station</a></li>
-							<li><a href="#">Journey to Mars</a></li>
-							<li><a href="#">Earth</a></li>
-							<li><a href="#">Technology</a></li>
-							<li><a href="#">Aeronautics</a></li>
-							<li><a href="#">Solar System and Beyond</a></li>
-							<li><a href="#">Education</a></li>
-							<li><a href="#">Education</a></li>
-							<li><a href="#">Benefits to You</a></li>
-						</ul>
+					<div class="row visible-lg">
+							<ul class="menu nav navbar-nav navbar-right">
+								<li><a href="#">International Space Station</a></li>
+								<li><a href="#">Journey to Mars</a></li>
+								<li><a href="#">Earth</a></li>
+								<li><a href="#">Technology</a></li>
+								<li><a href="#">Aeronautics</a></li>
+								<li><a href="#">Solar System and Beyond</a></li>
+								<li><a href="#">Education</a></li>
+								<li><a href="#">Education</a></li>
+								<li><a href="#">Benefits to You</a></li>
+							</ul>
 					</div>
 				</div>
 			</div>
