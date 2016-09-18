@@ -23,17 +23,37 @@
 	</head>
 	<body>
 		<div class="container">
-			<div class="row">
-				<div class="col-md-12"><div class="a col-md-12">Jumbo</div></div>
-				<div class="col-sx-12 col-sm-6 col-md-3"><div class="a col-md-12">Small</div></div>
-				<div class="col-sx-12 col-sm-6 col-md-6"><div class="a col-md-12">Double</div></div>
-				<div class="col-sx-12 col-sm-6 col-md-3"><div class="a col-md-12">Small</div></div>
-				<div class="col-sx-12 col-sm-6 col-md-6"><div class="a col-md-12">Double</div></div>
-				<div class="col-sx-12 col-sm-6 col-md-6"><div class="a col-md-12">Double</div></div>
-				<div class="col-sx-12 col-sm-6 col-md-3"><div class="a col-md-12">Small</div></div>
-				<div class="col-sx-12 col-sm-6 col-md-3"><div class="a col-md-12">Small</div></div>
-				<div class="col-sx-12 col-sm-6 col-md-3"><div class="a col-md-12">Small</div></div>
-				<div class="col-sx-12 col-sm-6 col-md-3"><div class="a col-md-12">Small</div></div>
+			<div class="row" >
+				<div class="col-lg-12">
+					<div class="a col-md-12">Jumbo</div>
+				</div>
+				<div class="col-sx-12 col-sm-6 col-md-6 col-lg-3">
+					<div class="a col-md-12">Small</div>
+				</div>
+				<div class="col-sx-12 col-sm-6 col-md-6">
+					<div class="a col-md-12">Double</div>
+				</div>
+				<div class="col-sx-12 col-sm-6 col-md-6 col-lg-3">
+					<div class="a col-md-12">Small</div>
+				</div>
+				<div class="col-sx-12 col-sm-6 col-md-6">
+					<div class="a col-md-12">Double</div>
+				</div>
+				<div class="col-sx-12 col-sm-6 col-md-6">
+					<div class="a col-md-12">Double</div>
+				</div>
+				<div class="col-sx-12 col-sm-6 col-md-6 col-lg-3">
+					<div class="a col-md-12">Small</div>
+				</div>
+				<div class="col-sx-12 col-sm-6 col-md-6 col-lg-3">
+					<div class="a col-md-12">Small</div>
+				</div>
+				<div class="col-sx-12 col-sm-6 col-md-6 col-lg-3">
+					<div class="a col-md-12">Small</div>
+				</div>
+				<div class="col-sx-12 col-sm-6 col-md-6 col-lg-3">
+					<div class="a col-md-12">Small</div>
+				</div>
 			</div>
 		</div>
 	</body>
