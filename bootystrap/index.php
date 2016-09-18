@@ -31,6 +31,10 @@
 			{
 				background-color: #b7b7b7;
 			}
+			.menu li a
+			{
+				padding: 5px 10px;
+			}
 		</style>
 	</head>
 	<body>
@@ -61,7 +65,7 @@
 						</ul>
 					</div>
 					<div class="row">
-							<ul class="menu nav navbar-nav navbar-right">
+							<ul class="menu nav navbar-nav navbar-right ">
 								<li><a href="#">International Space Station</a></li>
 								<li><a href="#">Journey to Mars</a></li>
 								<li><a href="#">Earth</a></li>
