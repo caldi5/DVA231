@@ -39,14 +39,6 @@
 	</head>
 	<body>
 		<div class="container">
-		<!--
-			<form class="form-signin" method="post" action="login.php">
-				<h2 class="form-signin-heading">Sign in</h2>
-				username<input type="text" name="username">
-				password<input type="password" name="password">
-				<input type="submit" name="login" value="Login">
-			</form>-->
-
 			<form class="form-signin" action="login.php" method="post">
 				<h2 class="form-signin-heading">Please sign in</h2>
 
