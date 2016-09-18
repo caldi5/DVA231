@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -30,7 +34,7 @@
 		</style>
 	</head>
 	<body>
-		<!-- ta bort navbar-inverse för att göra den transparent -->
+		<!-- ta bort navbar-inverse för att göra den transparent, fuckar dock styling -->
 		<nav class="navbar navbar-inverse navbar-static-top">
 			<div class="container">
 				<div class="navbar-header">
