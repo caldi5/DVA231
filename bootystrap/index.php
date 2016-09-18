@@ -35,6 +35,12 @@
 		<nav class="navbar navbar-inverse navbar-static-top">
 			<div class="container">
 				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+		            <span class="sr-only">Toggle navigation</span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		          </button>
 					<a class="navbar-left" href="index.php">
 						<img src="img/logo.png">
 					</a>
