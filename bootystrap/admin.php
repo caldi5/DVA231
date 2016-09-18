@@ -16,20 +16,30 @@
 	<body>
 		<div class="container">
 			<h1>New Newstory</h1>
-			<form>
+			<form method="post">
 				<div class="form-group">
 					<label>Title:</label>
-					<input type="text" class="form-control" name="title" placeholder="Chose a title">
+					<input type="text" class="form-control" name="title" placeholder="Chose a title" required autofocus>
 				</div>
 				<div class="form-group">
 					<label>text</label>
 					<textarea class="form-control" rows="5" name="mainText"></textarea>
 				</div>
+				<div class="form-group">
+					<label>Upload an image</label>
+					<input type="file" class="form-control" name="image">
+				</div>
+				<div class="form-group">
+				  <label>Select category:</label>
+				  <select class="form-control" name="category">
+				    <option>Category 1</option>
+				    <option>Category 2</option>
+				    <option>Category 3</option>
+				    <option>Category 4</option>
+				  </select>
+				</div>
 
-				<label>Upload an image</label>
-				<input type="file" class="form-control" name="image">
-				<br>
-				<input type="submit" class="form-control" name="news upload">
+				<button class="btn btn-lg btn-primary btn-block" type="submit" name="news upload">Submit</button>
 			</form>
 		</div>
 	</body>
