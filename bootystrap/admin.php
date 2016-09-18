@@ -14,6 +14,17 @@
 		<link href="css/bootstrap.css" rel="stylesheet">
 	</head>
 	<body>
+			<nav class="navbar navbar-inverse navbar-static-top">
+				<div class="container">
+					<ul class="nav navbar-nav navbar-left">
+						<li><a href="index.php">Index</a></li>
+					</ul>>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="logout.php">Logout</a></li>";
+					</ul>
+				</div>
+			</nav>
+
 		<div class="container">
 			<h1>New Newstory</h1>
 			<form method="post">
