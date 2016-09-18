@@ -62,6 +62,12 @@
 							<li><a href="#">Downloads</a></li>
 							<li><a href="#">About</a></li>
 							<li><a href="#">NASA Audiences</a></li>
+							<?php
+							if(isset($_SESSION["username"]))
+								echo "<li><a href=\"logout.php\">Logout</a></li>";
+							else
+								echo "<li><a href=\"login.php\">Login</a></li>";
+							?>
 						</ul>
 					</div>
 					<div class="row">
