@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -17,23 +18,59 @@
 			{
 				background-color: white;
 				margin-bottom: 20px;
-				height: 250px;
+				height: 300px;
 			}
 		</style>
 	</head>
 	<body>
+		<!-- ta bort navbar-inverse för att göra den transparent -->
+		<nav class="navbar navbar-inverse navbar-static-top">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-left" href="index.php">
+						<img src="img/logo.png">
+					</a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<div class="row">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="#">Missions</a></li>
+							<li><a href="#">Galleries</a></li>
+							<li><a href="#">NASA TV</a></li>
+							<li><a href="#">Follow NASA</a></li>
+							<li><a href="#">Downloads</a></li>
+							<li><a href="#">About</a></li>
+							<li><a href="#">NASA Audiences</a></li>
+						</ul>
+					</div>
+					<div class="row">
+						<ul class="nav navbar-nav">
+							<li><a href="#">International Space Station</a></li>
+							<li><a href="#">Journey to Mars</a></li>
+							<li><a href="#">Earth</a></li>
+							<li><a href="#">Technology</a></li>
+							<li><a href="#">Aeronautics</a></li>
+							<li><a href="#">Solar System and Beyond</a></li>
+							<li><a href="#">Education</a></li>
+							<li><a href="#">Education</a></li>
+							<li><a href="#">Benefits to You</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
 		<div class="container">
 			<div class="row" >
 				<div class="col-lg-12">
 					<div class="a col-md-12">Jumbo</div>
 				</div>
-				<div class="col-sx-12 col-sm-6 col-md-6 col-lg-3">
+				<div class="col-sx-12 col-sm-6 col-md-3">
 					<div class="a col-md-12">Small</div>
 				</div>
 				<div class="col-sx-12 col-sm-6 col-md-6">
 					<div class="a col-md-12">Double</div>
 				</div>
-				<div class="col-sx-12 col-sm-6 col-md-6 col-lg-3">
+				<div class="col-sx-12 col-sm-6 col-md-3">
 					<div class="a col-md-12">Small</div>
 				</div>
 				<div class="col-sx-12 col-sm-6 col-md-6">
@@ -42,16 +79,16 @@
 				<div class="col-sx-12 col-sm-6 col-md-6">
 					<div class="a col-md-12">Double</div>
 				</div>
-				<div class="col-sx-12 col-sm-6 col-md-6 col-lg-3">
+				<div class="col-sx-12 col-sm-6 col-md-3">
 					<div class="a col-md-12">Small</div>
 				</div>
-				<div class="col-sx-12 col-sm-6 col-md-6 col-lg-3">
+				<div class="col-sx-12 col-sm-6 col-md-3">
 					<div class="a col-md-12">Small</div>
 				</div>
-				<div class="col-sx-12 col-sm-6 col-md-6 col-lg-3">
+				<div class="col-sx-12 col-sm-6 col-md-3">
 					<div class="a col-md-12">Small</div>
 				</div>
-				<div class="col-sx-12 col-sm-6 col-md-6 col-lg-3">
+				<div class="col-sx-12 col-sm-6 col-md-3">
 					<div class="a col-md-12">Small</div>
 				</div>
 			</div>
