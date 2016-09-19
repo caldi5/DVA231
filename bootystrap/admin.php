@@ -4,6 +4,10 @@
 		header("location: login.php");;
 ?>
 
+
+
+
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -14,26 +18,39 @@
 		<link href="css/bootstrap.css" rel="stylesheet">
 	</head>
 	<body>
-			<nav class="navbar navbar-inverse navbar-static-top">
-				<div class="container">
-					<ul class="nav navbar-nav navbar-left">
-						<li><a href="index.php">Index</a></li>
-					</ul>
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="logout.php">Logout</a></li>";
-					</ul>
-				</div>
-			</nav>
+		<nav class="navbar navbar-inverse navbar-static-top">
+			<div class="container">
+				<ul class="nav navbar-nav navbar-left">
+					<li><a href="index.php">Index</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="logout.php">Logout</a></li>";
+				</ul>
+			</div>
+		</nav>
 
 		<div class="container">
+<?php
+if(isset($_POST["newsUpload"])) 
+{
+	if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], "uploads/" . basename($_FILES["fileToUpload"]["name"]))) 
+	{
+		echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+  }
+  else 
+  {
+		echo "Sorry, there was an error uploading your file.";
+  }
+}
+?>
 			<h1>New Newstory</h1>
-			<form method="post">
+			<form action="admin.php" method="post" enctype="multipart/form-data">
 				<div class="form-group">
 				  <label>Select news type:</label>
 				  <select class="form-control" name="newsType">
-				    <option>Jumbotron</option>
-				    <option>Double</option>
-				    <option>Single</option>
+						<option>Jumbotron</option>
+						<option>Double</option>
+						<option>Single</option>
 				  </select>
 				</div>
 				<div class="form-group">
@@ -45,8 +62,8 @@
 					<textarea class="form-control" rows="5" name="mainText"></textarea>
 				</div>
 				<div class="form-group">
-					<label>Upload an image</label>
-					<input type="file" class="form-control" name="image">
+					<label>Upload an image or video</label>
+					<input type="file" class="form-control" name="fileToUpload" id="fileToUpload">
 				</div>
 				<div class="form-group">
 				  <label>Select category:</label>
