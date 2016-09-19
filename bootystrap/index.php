@@ -10,32 +10,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>NASA - Bootstrap</title>
 		<link href="css/bootstrap.css" rel="stylesheet">
+		<link href="css/custom.css" rel="stylesheet">
 
 		<style type="text/css">
-			body
-			{
-				background-color: black;
-				margin-top: 15px;
-			}
-			.a
-			{
-				background-color: white;
-				margin-bottom: 20px;
-				height: 300px;
-			}
-			.menu li
-			{
-				background-color: #555;
-			}
-			.menu li:hover
-			{
-				background-color: #b7b7b7;
-			}
-			.menu li a
-			{
-				/*font-size: 0.83vw;*/
-				padding: 5px 10px;
-			}
+
 		</style>
 	</head>
 	<body>
@@ -55,7 +33,7 @@
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<div class="row">
-						<ul class="nav navbar-nav navbar-right">
+						<ul class="links nav navbar-nav navbar-right">
 							<li><a href="#">Missions</a></li>
 							<li><a href="#">Galleries</a></li>
 							<li><a href="#">NASA TV</a></li>
@@ -75,17 +53,17 @@
 						</ul>
 					</div>
 					<div class="row">
-							<ul class="menu nav navbar-nav navbar-right ">
-								<li><a href="#">International Space Station</a></li>
-								<li><a href="#">Journey to Mars</a></li>
-								<li><a href="#">Earth</a></li>
-								<li><a href="#">Technology</a></li>
-								<li><a href="#">Aeronautics</a></li>
-								<li><a href="#">Solar System and Beyond</a></li>
-								<li><a href="#">Education</a></li>
-								<li><a href="#">Education</a></li>
-								<li><a href="#">Benefits to You</a></li>
-							</ul>
+						<ul class="menu nav navbar-nav navbar-right">
+							<li><a href="#">International Space Station</a></li>
+							<li><a href="#">Journey to Mars</a></li>
+							<li><a href="#">Earth</a></li>
+							<li><a href="#">Technology</a></li>
+							<li><a href="#">Aeronautics</a></li>
+							<li><a href="#">Solar System and Beyond</a></li>
+							<li><a href="#">Education</a></li>
+							<li><a href="#">Education</a></li>
+							<li><a href="#">Benefits to You</a></li>
+						</ul>
 					</div>
 				</div>
 			</div>
@@ -93,34 +71,45 @@
 		<div class="container">
 			<div class="row" >
 				<div class="col-lg-12">
-					<div class="a col-md-12">Jumbo</div>
+					<div id="jumbo" class="item jumbo col-md-12">
+						<div class="image-container">
+							<h2 class="image-title" id="jumbo-title">Hola</h2>
+							<p class="image-text" id="jumbo-text">muble jumble humble dumble tumblemuble jumble humble dumble tumblemuble
+							</p>
+						</div>
+					</div>
 				</div>
 				<div class="col-sx-12 col-sm-6 col-md-3">
-					<div class="a col-md-12">Small</div>
+					<div class="item text-item col-md-12">
+						<div class="text-container">
+							<div class="text-container-header">
+								<h3>Fancy title</h3>
+							</div>
+							<div class="text-container-content">
+								<p>muble jumble humble dumble tumblemuble jumble humble dumble tumblemuble jumble humble dumble tumble</p>
+							</div>
+							<div class="text-container-footer">
+								<a href="#">Other stuff</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sx-12 col-sm-6 col-md-3">
+					<div class="item news-item col-md-12">
+						Small
+					</div>
 				</div>
 				<div class="col-sx-12 col-sm-6 col-md-6">
-					<div class="a col-md-12">Double</div>
+					<div class="item col-md-12">Double</div>
 				</div>
 				<div class="col-sx-12 col-sm-6 col-md-3">
-					<div class="a col-md-12">Small</div>
+					<div class="item col-md-12">Small</div>
 				</div>
 				<div class="col-sx-12 col-sm-6 col-md-6">
-					<div class="a col-md-12">Double</div>
-				</div>
-				<div class="col-sx-12 col-sm-6 col-md-6">
-					<div class="a col-md-12">Double</div>
+					<div class="item col-md-12">Double</div>
 				</div>
 				<div class="col-sx-12 col-sm-6 col-md-3">
-					<div class="a col-md-12">Small</div>
-				</div>
-				<div class="col-sx-12 col-sm-6 col-md-3">
-					<div class="a col-md-12">Small</div>
-				</div>
-				<div class="col-sx-12 col-sm-6 col-md-3">
-					<div class="a col-md-12">Small</div>
-				</div>
-				<div class="col-sx-12 col-sm-6 col-md-3">
-					<div class="a col-md-12">Small</div>
+					<div class="item col-md-12">Small</div>
 				</div>
 			</div>
 		</div>
