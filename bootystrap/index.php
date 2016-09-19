@@ -121,13 +121,46 @@
 					</div>
 				</div>
 				<div class="col-sx-12 col-sm-6 col-md-3">
-					<div class="item col-md-12">Small</div>
+					<div class="item col-md-12">
+						<video onclick="playPause()" id="video1" width="300px" height="300px">
+						<source src="video/vid1.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+						</video>
+						<img onclick="playPause()" id="playImageButton" class="video-image" src="img/play.png">
+
+						<script type="text/javascript">
+							var myVideo = document.getElementById("video1");
+							var playImage = document.getElementById("playImageButton");
+
+							function playPause()
+							{
+								if (myVideo.paused)
+								{
+									playImage.style.display = "none";
+									myVideo.setAttribute("controls", "");
+									myVideo.play();
+								}
+								else
+								{
+									playImage.style.display = "initial";
+									myVideo.removeAttribute("controls");
+									myVideo.pause();
+								}
+							}
+						</script>
+					</div>
 				</div>
 				<div class="col-sx-12 col-sm-6 col-md-6">
-					<div class="item col-md-12">Double</div>
+					<div class="item col-md-12">
+						<img src="img/kitten.jpg">
+					</div>
 				</div>
 				<div class="col-sx-12 col-sm-6 col-md-3">
-					<div class="item col-md-12">Small</div>
+					<div class="item col-md-12">
+						<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/NASA" data-widget-id="332858661187751936">Tweets by @NASA</a>
+						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+						</script>
+					</div>
 				</div>
 			</div>
 		</div>
