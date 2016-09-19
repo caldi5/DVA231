@@ -17,7 +17,6 @@
 		<script src="js/jumbo.js"></script>
 	</head>
 	<body>
-		<!-- ta bort navbar-inverse för att göra den transparent, fuckar dock styling -->
 		<nav class="navbar navbar-inverse navbar-static-top">
 			<div class="container">
 				<div class="navbar-header">
@@ -123,13 +122,10 @@
 				</div>
 				<div class="col-sx-12 col-sm-6 col-md-3">
 					<div class="item col-md-12">
-						<video onclick="playPause()" id="video1" width="300px" height="300px">
-						<source src="video/vid1.mp4" type="video/mp4">
-						Your browser does not support the video tag.
+						<video controls id="video1" width="300px" height="300px">
+							<source src="video/vid1.mp4" type="video/mp4">
+							Your browser does not support the video tag.
 						</video>
-						<img onclick="playPause()" id="playImageButton" class="video-image" src="img/play.png">
-
-						<script src="js/video.js"></script>
 					</div>
 				</div>
 				<div class="col-sx-12 col-sm-6 col-md-6">
