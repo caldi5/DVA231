@@ -96,11 +96,29 @@
 				</div>
 				<div class="col-sx-12 col-sm-6 col-md-3">
 					<div class="item news-item col-md-12">
-						Small
+						<div class="image-container">
+							<h2 class="image-title">Hola</h2>
+							<p class="image-text">
+								muble jumble humble dumble tumblemuble jumble
+								<span class="cont">
+									Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+								</span>
+							</p>
+						</div>
 					</div>
 				</div>
 				<div class="col-sx-12 col-sm-6 col-md-6">
-					<div class="item col-md-12">Double</div>
+					<div class="item double col-md-12">
+						<div class="double-square">
+						</div>
+						<div class="double-image">
+							<img src="https://pbs.twimg.com/profile_images/562466745340817408/_nIu8KHX.jpeg">
+						</div>
+						<div class="double-text">
+							<h2>Hey, What's up?</h2>
+							<p>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
+						</div>
+					</div>
 				</div>
 				<div class="col-sx-12 col-sm-6 col-md-3">
 					<div class="item col-md-12">Small</div>
