@@ -8,13 +8,14 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" href="img/favicon.ico">
 		<title>NASA - Bootstrap</title>
 		<link href="css/bootstrap.css" rel="stylesheet">
 		<link href="css/custom.css" rel="stylesheet">
 
-		<style type="text/css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script src="js/jumbo.js"></script>
 
-		</style>
 	</head>
 	<body>
 		<!-- ta bort navbar-inverse för att göra den transparent, fuckar dock styling -->
@@ -74,6 +75,7 @@
 					<div id="jumbo" class="item jumbo col-md-12">
 						<div class="image-container">
 							<h2 class="image-title" id="jumbo-title">Hola</h2>
+							<br>
 							<p class="image-text" id="jumbo-text">muble jumble humble dumble tumblemuble jumble humble dumble tumblemuble
 							</p>
 						</div>
@@ -166,7 +168,7 @@
 		</div>
 
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		
 		<script src="js/bootstrap.js"></script>
 	</body>
 </html>
