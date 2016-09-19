@@ -16,6 +16,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 		<script src="js/jumbo.js"></script>
 
+
 	</head>
 	<body>
 		<!-- ta bort navbar-inverse för att göra den transparent, fuckar dock styling -->
@@ -130,26 +131,7 @@
 						</video>
 						<img onclick="playPause()" id="playImageButton" class="video-image" src="img/play.png">
 
-						<script type="text/javascript">
-							var myVideo = document.getElementById("video1");
-							var playImage = document.getElementById("playImageButton");
-
-							function playPause()
-							{
-								if (myVideo.paused)
-								{
-									playImage.style.display = "none";
-									myVideo.setAttribute("controls", "");
-									myVideo.play();
-								}
-								else
-								{
-									playImage.style.display = "initial";
-									myVideo.removeAttribute("controls");
-									myVideo.pause();
-								}
-							}
-						</script>
+						<script src="js/video.js"></script>
 					</div>
 				</div>
 				<div class="col-sx-12 col-sm-6 col-md-6">
