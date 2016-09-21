@@ -30,21 +30,8 @@
 		</nav>
 
 		<div class="container">
-<?php
-if(isset($_POST["newsUpload"])) 
-{
-	if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], "uploads/" . basename($_FILES["fileToUpload"]["name"]))) 
-	{
-		echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-  }
-  else 
-  {
-		echo "Sorry, there was an error uploading your file.";
-  }
-}
-?>
 			<h1>New Newstory</h1>
-			<form action="admin.php" method="post" enctype="multipart/form-data">
+			<form action="index.php" method="post" enctype="multipart/form-data">
 				<div class="form-group">
 				  <label>Select news type:</label>
 				  <select class="form-control" name="newsType">
