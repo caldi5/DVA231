@@ -3,7 +3,6 @@ session_start();
 
 if(isset($_POST["newsUpload"])) 
 {
-	$userpost = 1;
 	//Start by checking that they are logged in
 	if(!isset($_SESSION["username"]))
 	{
@@ -167,6 +166,15 @@ if(isset($_POST["newsUpload"]))
 			</div>
 		</nav>
 		<div class="container">
+		<?php
+			if(isset($error))
+			{
+				echo "<div class=\"alert alert-danger\">";
+				echo "<a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>";
+				echo "<strong>Error</strong> ".$error;
+				echo "</div>";
+			}
+		?>
 			<div class="row" >
 				<div class="col-lg-12">
 					<?php echo '<a onclick="linkClick();">'; ?>
