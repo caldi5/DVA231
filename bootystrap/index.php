@@ -1,13 +1,6 @@
 <?php
 session_start();
 
-//Variable decleration
-$error = 0;
-$userpost = 0;
-$image = "https://pbs.twimg.com/profile_images/562466745340817408/_nIu8KHX.jpeg";
-$title = "Hey, What's up?";
-$text = "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum";
-
 if(isset($_POST["newsUpload"])) 
 {
 	$userpost = 1;
@@ -178,11 +171,11 @@ if(isset($_POST["newsUpload"]))
 						<div class="double-square">
 						</div>
 						<div class="double-image">
-							<img src="<?php echo $image;?>">
+							<img src="https://pbs.twimg.com/profile_images/562466745340817408/_nIu8KHX.jpeg">
 						</div>
 						<div class="double-text">
-							<h2><?php echo $title;?></h2>
-							<p><?php echo $text;?></p>
+							<h2>Hey, What's up?</h2>
+							<p>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
 						</div>
 					</div>
 				</div>
