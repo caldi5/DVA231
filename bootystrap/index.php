@@ -11,13 +11,45 @@ if(isset($_POST["newsUpload"]))
 	}
 
 	//upload the image/video
-	if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], "uploads/" . basename($_FILES["fileToUpload"]["name"]))) 
+	$error;
+
+	// Check exists
+	if (file_exists("uploads/" . basename($_FILES["fileToUpload"]["name"]))) 
 	{
-		$image = "uploads/" . basename($_FILES["fileToUpload"]["name"]);
+		$error = "a file by that name already exists";
+	}
+
+	// Check filesize
+	if ($_FILES["fileToUpload"]["size"] > 500000) 
+	{
+		$error = "File is to big";
+	}
+
+	// Check if file is image or video
+	if(strstr(mime_content_type($_FILES["fileToUpload"]["tmp_name"]), "video/"))
+	{
+    	//Code for video
+	}
+	else if(strstr(mime_content_type($_FILES["fileToUpload"]["tmp_name"]), "image/"))
+	{
+    	//Code for image
 	}
 	else
 	{
-		$error = 1;
+		$error = "uploaded file is not an image or video";
+	}
+
+	if(!isset($error))
+	{
+		//Do the actuall uploading
+		if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], "uploads/" . basename($_FILES["fileToUpload"]["name"]))) 
+		{
+			$image = "uploads/" . basename($_FILES["fileToUpload"]["name"]);
+		}
+		else
+		{
+			$error = "unknown error";
+		}
 	}
 
 	//Text stuff
@@ -56,7 +88,7 @@ if(isset($_POST["newsUpload"]))
 					if (isset($title) && isset($text) && isset($image))
 					{
 						echo 'backgrounds.push(url('. $image .'));';
-						echo 'titles.push'
+						echo 'titles.push';
 					}
 				?>
 
