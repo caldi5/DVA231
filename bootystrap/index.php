@@ -46,7 +46,41 @@ if(isset($_POST["newsUpload"]))
 		<link href="css/custom.css" rel="stylesheet">
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-		<script src="js/jumbo.js"></script>
+		<script type="text/javascript">
+			$(function()
+			{
+				var jumbo = $('#jumbo');
+				var title = $('#jumbo-title');
+				var text = $("#jumbo-text");
+
+			  	var backgrounds = ['url(img/earth2.jpg)', 'url(img/rocketJumbo.jpg)', 'url(img/supernova.jpg)'];
+				var titles = ["Titel 1", "Titel 2", "Titel 3"];
+				var texts = ["Photoshopped picture of earth like planet.", "Picture of a rocket.", "Supernova!"]
+
+				var current = 0;
+
+				<?php
+					if (isset($title) && isset($text) && isset($image))
+					{
+						echo 'backgrounds.push(url('. $image .'));';
+						echo 'titles.push'
+					}
+				?>
+
+				function nextBackground()
+				{
+					jumbo.css('background-image', backgrounds[current = ++current % backgrounds.length]);
+				  	title.html(titles[current]);
+				  	text.html(texts[current]);
+				 	setTimeout(nextBackground, 3000);
+				}
+
+				setTimeout(nextBackground, 3000);
+				jumbo.css('background-image', backgrounds[0]);
+				title.html(titles[0]);
+				text.html(texts[0]);
+			});
+		</script>
 	</head>
 	<body>
 		<nav class="navbar navbar-inverse navbar-static-top">
