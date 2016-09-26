@@ -25,11 +25,11 @@ if(isset($_POST["newsUpload"]))
 	}
 
 	// Check if file is image or video
-	if(strstr(mime_content_type($_FILES["fileToUpload"]["tmp_name"]), "video/"))
+	if(strstr(mime_content_type($_FILES["fileToUpload"]["tmp_name"]), "uploads/"))
 	{
     	//Code for video
 	}
-	else if(strstr(mime_content_type($_FILES["fileToUpload"]["tmp_name"]), "image/"))
+	else if(strstr(mime_content_type($_FILES["fileToUpload"]["tmp_name"]), "uploads/"))
 	{
     	//Code for image
 	}
