@@ -96,11 +96,19 @@ if(isset($_POST["newsUpload"]))
 				{
 					jumbo.css('background-image', backgrounds[current = ++current % backgrounds.length]);
 				  	title.html(titles[current]);
-				  	text.html(texts[current]);
+				  	//text.html(texts[current]);
 				 	setTimeout(nextBackground, 3000);
 				 	hiddenImage.attr('value', backgrounds[current].substring(4, backgrounds[current].length - 1));
 				 	hiddenTitle.attr('value', titles[current]);
-				 	hiddenText.attr('value', texts[current])
+				 	hiddenText.attr('value', texts[current]);
+				 	if(texts[current].length > 100)
+				 	{
+				 		text.html(texts[current].substr(0, 100));
+				 	}
+				 	else
+				 	{
+				 		text.html(texts[current]);
+				 	}
 				}
 				setTimeout(nextBackground, 3000);
 				jumbo.css('background-image', backgrounds[0]);

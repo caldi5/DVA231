@@ -42,11 +42,11 @@
 				</div>
 				<div class="form-group">
 					<label>Title:</label>
-					<input type="text" class="form-control" name="title" placeholder="Chose a title" required autofocus>
+					<input type="text" maxlength="50" class="form-control" name="title" placeholder="Chose a title" required autofocus>
 				</div>
 				<div class="form-group">
 					<label>text</label>
-					<textarea class="form-control" rows="5" name="mainText"></textarea>
+					<textarea maxlength="500" class="form-control" rows="5" name="mainText"></textarea>
 				</div>
 				<div class="form-group">
 					<label>Upload an image or video</label>
