@@ -88,7 +88,7 @@ if(isset($_POST["newsUpload"]))
 					if (isset($title) && isset($text) && isset($image))
 					{
 						echo 'backgrounds.push(url('. $image .'));';
-						echo 'titles.push';
+						echo 'titles.push'
 					}
 				?>
 
