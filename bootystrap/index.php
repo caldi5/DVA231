@@ -77,21 +77,18 @@ if(isset($_POST["newsUpload"]))
 				var jumbo = $('#jumbo');
 				var title = $('#jumbo-title');
 				var text = $("#jumbo-text");
-
 			  	var backgrounds = ['url(img/earth2.jpg)', 'url(img/rocketJumbo.jpg)', 'url(img/supernova.jpg)'];
 				var titles = ["Titel 1", "Titel 2", "Titel 3"];
 				var texts = ["Photoshopped picture of earth like planet.", "Picture of a rocket.", "Supernova!"]
-
 				var current = 0;
-
 				<?php
 					if (isset($title) && isset($text) && isset($image))
 					{
-						echo 'backgrounds.push(url('. $image .'));';
-						echo 'titles.push'
+						echo 'backgrounds.push("url('. $image .')");';
+						echo 'titles.push("'. $title .'");';
+						echo 'texts.push("'. $text .'");';
 					}
 				?>
-
 				function nextBackground()
 				{
 					jumbo.css('background-image', backgrounds[current = ++current % backgrounds.length]);
@@ -99,7 +96,6 @@ if(isset($_POST["newsUpload"]))
 				  	text.html(texts[current]);
 				 	setTimeout(nextBackground, 3000);
 				}
-
 				setTimeout(nextBackground, 3000);
 				jumbo.css('background-image', backgrounds[0]);
 				title.html(titles[0]);
@@ -161,6 +157,7 @@ if(isset($_POST["newsUpload"]))
 		<div class="container">
 			<div class="row" >
 				<div class="col-lg-12">
+					<?php echo '<a onclick="linkClick();">'; ?>
 					<div id="jumbo" class="item jumbo col-md-12">
 						<div class="image-container">
 							<h2 class="image-title" id="jumbo-title">Hola</h2>
@@ -169,6 +166,14 @@ if(isset($_POST["newsUpload"]))
 							</p>
 						</div>
 					</div>
+					<?php echo '</a>'; ?>
+					<script type="text/javascript">
+						
+									function linkClick()
+			{
+				document.getElementById("hidden-link").submit();
+			}
+					</script>
 				</div>
 				<div class="col-sx-12 col-sm-6 col-md-3">
 					<div class="item text-item col-md-12">
@@ -234,6 +239,11 @@ if(isset($_POST["newsUpload"]))
 			</div>
 		</div>
 
+		<form id="hidden-link" method="post" action="article.php">
+			<input type="hidden" value=<?php echo '"'.$image.'"'; ?> name="image">
+			<input type="hidden" value=<?php echo '"'.$title.'"'; ?> name="title">
+			<input type="hidden" value=<?php echo '"'.$text.'"'; ?> name="text">
+		</form>
 		<script src="js/bootstrap.js"></script>
 	</body>
 </html>
