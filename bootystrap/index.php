@@ -24,20 +24,6 @@ if(isset($_POST["newsUpload"]))
 		$error = "File is to big";
 	}
 
-	// Check if file is image or video
-	if(strstr(mime_content_type($_FILES["fileToUpload"]["tmp_name"]), "uploads/"))
-	{
-    	//Code for video
-	}
-	else if(strstr(mime_content_type($_FILES["fileToUpload"]["tmp_name"]), "uploads/"))
-	{
-    	//Code for image
-	}
-	else
-	{
-		$error = "uploaded file is not an image or video";
-	}
-
 	if(!isset($error))
 	{
 		//Do the actuall uploading
@@ -96,11 +82,19 @@ if(isset($_POST["newsUpload"]))
 				{
 					jumbo.css('background-image', backgrounds[current = ++current % backgrounds.length]);
 				  	title.html(titles[current]);
-				  	text.html(texts[current]);
+				  	//text.html(texts[current]);
 				 	setTimeout(nextBackground, 3000);
 				 	hiddenImage.attr('value', backgrounds[current].substring(4, backgrounds[current].length - 1));
 				 	hiddenTitle.attr('value', titles[current]);
-				 	hiddenText.attr('value', texts[current])
+				 	hiddenText.attr('value', texts[current]);
+				 	if(texts[current].length > 100)
+				 	{
+				 		text.html(texts[current].substr(0, 100));
+				 	}
+				 	else
+				 	{
+				 		text.html(texts[current]);
+				 	}
 				}
 				setTimeout(nextBackground, 3000);
 				jumbo.css('background-image', backgrounds[0]);
