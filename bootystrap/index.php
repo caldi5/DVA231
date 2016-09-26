@@ -24,6 +24,20 @@ if(isset($_POST["newsUpload"]))
 		$error = "File is to big";
 	}
 
+	// Check if file is image or video
+	if(strstr(mime_content_type($_FILES["fileToUpload"]["tmp_name"]), "video/"))
+	{
+    	//Code for video
+	}
+	else if(strstr(mime_content_type($_FILES["fileToUpload"]["tmp_name"]), "image/"))
+	{
+    	//Code for image
+	}
+	else
+	{
+		$error = "uploaded file is not an image or video";
+	}
+
 	if(!isset($error))
 	{
 		//Do the actuall uploading
