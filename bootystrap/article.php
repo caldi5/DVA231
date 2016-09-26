@@ -2,13 +2,15 @@
 
 session_start(); 
 
-if (isset($_POST['title']) && isset($_POST['text']))
+if (isset($_POST['title']) && isset($_POST['text']) && isset($_POST['image']))
 {
+	$image = $_POST['image'];
 	$title = $_POST['title'];
 	$text = $_POST['text'];
 }
 else
 {
+	$image = 'img/beer.jpg';
 	$title = "Title";
 	$text = "Text";
 }
@@ -103,6 +105,7 @@ else
 		</div>
 	</nav>
 	<div class="container">
+		<img style="max-width: 75%;" src=<?php echo '"'.$image.'";'; ?>><br>
 		<h1 class="article-title"><?php echo $title; ?></h1>
 		<p class="article-text"><?php echo $text; ?></p>
 	</div>

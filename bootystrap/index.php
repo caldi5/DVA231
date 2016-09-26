@@ -3,7 +3,6 @@ session_start();
 
 if(isset($_POST["newsUpload"])) 
 {
-	$userpost = 1;
 	//Start by checking that they are logged in
 	if(!isset($_SESSION["username"]))
 	{
@@ -55,8 +54,9 @@ if(isset($_POST["newsUpload"]))
 				<?php
 					if (isset($title) && isset($text) && isset($image))
 					{
-						echo 'backgrounds.push(url('. $image .'));';
-						echo 'titles.push'
+						echo 'backgrounds.push("url('. $image .')");';
+						echo 'titles.push("'. $title .'");';
+						echo 'texts.push("'. $text .'");';
 					}
 				?>
 
@@ -73,6 +73,8 @@ if(isset($_POST["newsUpload"]))
 				title.html(titles[0]);
 				text.html(texts[0]);
 			});
+
+
 		</script>
 	</head>
 	<body>
@@ -129,6 +131,7 @@ if(isset($_POST["newsUpload"]))
 		<div class="container">
 			<div class="row" >
 				<div class="col-lg-12">
+					<?php echo '<a onclick="linkClick();">'; ?>
 					<div id="jumbo" class="item jumbo col-md-12">
 						<div class="image-container">
 							<h2 class="image-title" id="jumbo-title">Hola</h2>
@@ -137,6 +140,14 @@ if(isset($_POST["newsUpload"]))
 							</p>
 						</div>
 					</div>
+					<?php echo '</a>'; ?>
+					<script type="text/javascript">
+						
+									function linkClick()
+			{
+				document.getElementById("hidden-link").submit();
+			}
+					</script>
 				</div>
 				<div class="col-sx-12 col-sm-6 col-md-3">
 					<div class="item text-item col-md-12">
@@ -202,6 +213,11 @@ if(isset($_POST["newsUpload"]))
 			</div>
 		</div>
 
+		<form id="hidden-link" method="post" action="article.php">
+			<input type="hidden" value=<?php echo '"'.$image.'"'; ?> name="image">
+			<input type="hidden" value=<?php echo '"'.$title.'"'; ?> name="title">
+			<input type="hidden" value=<?php echo '"'.$text.'"'; ?> name="text">
+		</form>
 		<script src="js/bootstrap.js"></script>
 	</body>
 </html>
