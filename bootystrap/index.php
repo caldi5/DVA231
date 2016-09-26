@@ -3,7 +3,6 @@ session_start();
 
 if(isset($_POST["newsUpload"])) 
 {
-	$userpost = 1;
 	//Start by checking that they are logged in
 	if(!isset($_SESSION["username"]))
 	{
@@ -11,45 +10,13 @@ if(isset($_POST["newsUpload"]))
 	}
 
 	//upload the image/video
-	$error;
-
-	// Check exists
-	if (file_exists("uploads/" . basename($_FILES["fileToUpload"]["name"]))) 
+	if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], "uploads/" . basename($_FILES["fileToUpload"]["name"]))) 
 	{
-		$error = "a file by that name already exists";
-	}
-
-	// Check filesize
-	if ($_FILES["fileToUpload"]["size"] > 500000) 
-	{
-		$error = "File is to big";
-	}
-
-	// Check if file is image or video
-	if(strstr(mime_content_type($_FILES["fileToUpload"]["tmp_name"]), "video/"))
-	{
-    	//Code for video
-	}
-	else if(strstr(mime_content_type($_FILES["fileToUpload"]["tmp_name"]), "image/"))
-	{
-    	//Code for image
+		$image = "uploads/" . basename($_FILES["fileToUpload"]["name"]);
 	}
 	else
 	{
-		$error = "uploaded file is not an image or video";
-	}
-
-	if(!isset($error))
-	{
-		//Do the actuall uploading
-		if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], "uploads/" . basename($_FILES["fileToUpload"]["name"]))) 
-		{
-			$image = "uploads/" . basename($_FILES["fileToUpload"]["name"]);
-		}
-		else
-		{
-			$error = "unknown error";
-		}
+		$error = 1;
 	}
 
 	//Text stuff
@@ -77,6 +44,9 @@ if(isset($_POST["newsUpload"]))
 				var jumbo = $('#jumbo');
 				var title = $('#jumbo-title');
 				var text = $("#jumbo-text");
+				var hiddenImage = $("#hidden-image");
+				var hiddenTitle = $("#hidden-title");
+				var hiddenText = $("#hidden-text");
 
 			  	var backgrounds = ['url(img/earth2.jpg)', 'url(img/rocketJumbo.jpg)', 'url(img/supernova.jpg)'];
 				var titles = ["Titel 1", "Titel 2", "Titel 3"];
@@ -87,8 +57,9 @@ if(isset($_POST["newsUpload"]))
 				<?php
 					if (isset($title) && isset($text) && isset($image))
 					{
-						echo 'backgrounds.push(url('. $image .'));';
-						echo 'titles.push'
+						echo 'backgrounds.push("url('. $image .')");';
+						echo 'titles.push("'. $title .'");';
+						echo 'texts.push("'. $text .'");';
 					}
 				?>
 
@@ -98,13 +69,21 @@ if(isset($_POST["newsUpload"]))
 				  	title.html(titles[current]);
 				  	text.html(texts[current]);
 				 	setTimeout(nextBackground, 3000);
+				 	hiddenImage.attr('value', backgrounds[current].substring(4, backgrounds[current].length - 1));
+				 	hiddenTitle.attr('value', titles[current]);
+				 	hiddenText.attr('value', texts[current])
 				}
 
 				setTimeout(nextBackground, 3000);
 				jumbo.css('background-image', backgrounds[0]);
 				title.html(titles[0]);
 				text.html(texts[0]);
+			 	hiddenImage.attr('value', backgrounds[0].substring(4, backgrounds[0].length - 1));
+			 	hiddenTitle.attr('value', titles[0]);
+			 	hiddenText.attr('value', texts[0])
 			});
+
+
 		</script>
 	</head>
 	<body>
@@ -161,6 +140,7 @@ if(isset($_POST["newsUpload"]))
 		<div class="container">
 			<div class="row" >
 				<div class="col-lg-12">
+					<?php echo '<a onclick="linkClick();">'; ?>
 					<div id="jumbo" class="item jumbo col-md-12">
 						<div class="image-container">
 							<h2 class="image-title" id="jumbo-title">Hola</h2>
@@ -169,6 +149,14 @@ if(isset($_POST["newsUpload"]))
 							</p>
 						</div>
 					</div>
+					<?php echo '</a>'; ?>
+					<script type="text/javascript">
+						
+									function linkClick()
+			{
+				document.getElementById("hidden-link").submit();
+			}
+					</script>
 				</div>
 				<div class="col-sx-12 col-sm-6 col-md-3">
 					<div class="item text-item col-md-12">
@@ -234,6 +222,11 @@ if(isset($_POST["newsUpload"]))
 			</div>
 		</div>
 
+		<form id="hidden-link" method="post" action="article.php">
+			<input type="hidden" value="" name="image" id="hidden-image">
+			<input type="hidden" value="" name="title" id="hidden-title">
+			<input type="hidden" value="" name="text" id="hidden-text">
+		</form>
 		<script src="js/bootstrap.js"></script>
 	</body>
 </html>
