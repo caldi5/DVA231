@@ -259,3 +259,8 @@ a:hover
 {
 	max-width: 100%;
 }
+
+.article-text
+{
+	word-wrap: break-word;
+}
