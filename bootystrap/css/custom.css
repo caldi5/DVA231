@@ -85,6 +85,7 @@ a:hover
 	background-image: url("../img/earth2.jpg");
 	background-position: center;
 	background-repeat: no-repeat;
+	cursor: pointer;
 }
 
 #jumbo .image-container
