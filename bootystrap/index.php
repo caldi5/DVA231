@@ -51,9 +51,7 @@ if(isset($_POST["newsUpload"]))
 			  	var backgrounds = ['url(img/earth2.jpg)', 'url(img/rocketJumbo.jpg)', 'url(img/supernova.jpg)'];
 				var titles = ["Titel 1", "Titel 2", "Titel 3"];
 				var texts = ["Photoshopped picture of earth like planet.", "Picture of a rocket.", "Supernova!"]
-
 				var current = 0;
-
 				<?php
 					if (isset($title) && isset($text) && isset($image))
 					{
@@ -62,7 +60,6 @@ if(isset($_POST["newsUpload"]))
 						echo 'texts.push("'. $text .'");';
 					}
 				?>
-
 				function nextBackground()
 				{
 					jumbo.css('background-image', backgrounds[current = ++current % backgrounds.length]);
@@ -73,7 +70,6 @@ if(isset($_POST["newsUpload"]))
 				 	hiddenTitle.attr('value', titles[current]);
 				 	hiddenText.attr('value', texts[current])
 				}
-
 				setTimeout(nextBackground, 3000);
 				jumbo.css('background-image', backgrounds[0]);
 				title.html(titles[0]);
