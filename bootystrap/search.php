@@ -1,16 +1,34 @@
 <?php
 	require_once "dbconn.php";
 
-	$query = "select * from news";
-	$results = $conn->query($query);
-
-	if ($results->num_rows > 0)
+	if (isset($_GET["q"]))
 	{
-		while ($row =  $results->fetch_assoc())
+		$query = $_GET["q"];
+		$sql = "SELECT * FROM news WHERE (user LIKE '%$query%'
+		OR title LIKE '%$query%'
+		OR text LIKE '%$query%'
+		)";
+		$results = $conn->query($sql);
+
+		if ($results->num_rows > 0)
 		{
-			echo '<h1>'.$row["title"].'</h1>';
-			echo '<p>'.$row["text"].'</p>';
-			echo '<i>By: '.$row["user"].'</i>';
+			while ($row =  $results->fetch_assoc())
+			{
+				echo '<h1>'.$row["title"].'</h1>';
+				echo '<p>'.$row["text"].'</p>';
+				echo '<i>By: '.$row["user"].'</i>';
+			}
+		}
+		else
+		{
+			echo "No posts found! :(";
 		}
 	}
+	else
+	{
+		header("Location: index.php");
+	}
+	
+
+
 ?>
