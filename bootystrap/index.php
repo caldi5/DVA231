@@ -1,5 +1,6 @@
 <?php
 session_start();
+include "dbconn.php";
 
 if(isset($_POST["newsUpload"])) 
 {
