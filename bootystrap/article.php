@@ -1,18 +1,33 @@
 <?php 
 
 session_start(); 
+require_once "dbconn.php";
 
 if (isset($_POST['title']) && isset($_POST['text']) && isset($_POST['image']))
 {
 	$image = $_POST['image'];
 	$title = $_POST['title'];
 	$text = $_POST['text'];
+	$author = "Admin";
+}
+elseif (isset($_GET["id"])) 
+{
+	$id = $_GET["id"];
+	$sql = "SELECT * FROM news WHERE id = $id";
+	$results = $conn->query($sql);
+	$row =  $results->fetch_array();
+
+	$image = $row["imagepath"];
+	$title = $row["title"];
+	$text = $row["text"];
+	$author = $row["user"];
 }
 else
 {
 	$image = 'img/beer.jpg';
 	$title = "Title";
 	$text = "Text";
+	$author = "Admin";
 }
 
 
@@ -108,6 +123,7 @@ else
 		<img style="max-width: 75%;" src=<?php echo '"'.$image.'";'; ?>><br>
 		<h1 class="article-title"><?php echo $title; ?></h1>
 		<p class="article-text"><?php echo $text; ?></p>
+		<i>Written by: <?php echo $author; ?></i>
 	</div>
 </body>
 </html>

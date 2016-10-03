@@ -140,7 +140,7 @@ if(isset($_POST["newsUpload"]))
 				<div id="navbar" class="navbar-collapse collapse">
 					<div class="row">
 						<div class="search">
-							<form action="index.html" method="get">
+							<form action="search.php" method="get">
 								<input type="search" name="q" placeholder="Search">
 							</form>
 						</div>
