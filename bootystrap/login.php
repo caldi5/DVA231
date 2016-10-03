@@ -1,4 +1,5 @@
 <?php
+	require_once "dbconn.php";
 	session_start();
 	//Check if allready logged in, if so, redirect to admin.php
 	if(isset($_SESSION["username"]))
@@ -8,10 +9,19 @@
 
 	if(isset($_POST["login"]))
 	{
-		if($_POST["username"] == "test" && $_POST["password"] == "asdf")
+		
+		$escapedUsername = $conn->real_escape_string ($_POST['username']);
+		$escapedPassword = $conn->real_escape_string ($_POST['password']);
+
+		$results = $conn->query("SELECT * FROM users WHERE username = '$escapedUsername' AND password ='$escapedPassword'");
+		if($results->num_rows > 0)
 		{
-			$_SESSION["username"] = $_POST["username"];
+			$_SESSION["username"] = $escapedUsername;
 			header("location: admin.php");
+		}
+		else
+		{
+			$error = "Wrong username or password";
 		}
 	}
 ?>
@@ -41,7 +51,15 @@
 		<div class="container">
 			<form class="form-signin" action="login.php" method="post">
 				<h2 class="form-signin-heading">Please sign in</h2>
-
+				<?php
+					if(isset($error))
+					{
+						echo "<div class=\"alert alert-danger\">";
+						echo "<a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>";
+						echo "<strong>Error</strong> ".$error;
+						echo "</div>";
+					}
+				?>
 				<label for="username" class="sr-only">Email address</label>
 				<input name="username" type="text" class="form-control" placeholder="Email address" required="" autofocus="">
 
