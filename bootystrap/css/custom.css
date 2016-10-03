@@ -264,3 +264,34 @@ a:hover
 {
 	word-wrap: break-word;
 }
+
+.search
+{
+	bottom: 0;
+	top: auto;
+	right: auto;
+	float: right;
+	position: relative;
+	max-width: 25%;
+	height: 100%;
+	display: inline-block;
+}
+
+.search form
+{
+	margin-right: 25px;
+	top: 30;
+	position: relative;
+}
+
+.search input
+{
+	background-color: grey;
+	background-image: url("../img/search.svg");
+	background-position: right 10px top;
+	background-repeat: no-repeat;
+	border: none;
+	padding: 10px 36px 10px 10px;
+	width: 200px;
+	margin-left: 15px;
+}

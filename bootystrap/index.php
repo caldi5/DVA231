@@ -138,6 +138,11 @@ if(isset($_POST["newsUpload"]))
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<div class="row">
+						<div class="search">
+							<form action="index.html" method="get">
+								<input type="search" name="q" placeholder="Search">
+							</form>
+						</div>
 						<ul class="links nav navbar-nav navbar-right">
 							<li><a href="#">Missions</a></li>
 							<li><a href="#">Galleries</a></li>
