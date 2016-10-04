@@ -120,7 +120,27 @@ if(isset($_POST["newsUpload"]))
 			 	hiddenText.attr('value', texts[0])
 			});
 
-
+			function showHint(str) 
+			{
+				if (str.length == 0) 
+				{ 
+					document.getElementById("search-results-container").style.display = "none";
+					document.getElementById("search-results").innerHTML = "";
+					return;
+				} 
+				else 
+				{
+					document.getElementById("search-results-container").style.display = "block";
+					var xmlhttp = new XMLHttpRequest();
+					xmlhttp.onreadystatechange = function() {
+						if (this.readyState == 4 && this.status == 200) {
+							document.getElementById("search-results").innerHTML = this.responseText;
+						}
+					};
+					xmlhttp.open("GET", "search.php?q=" + str, true);
+					xmlhttp.send();
+				}
+			}
 		</script>
 	</head>
 	<body>
@@ -141,13 +161,10 @@ if(isset($_POST["newsUpload"]))
 					<div class="row">
 						<div class="search">
 							<form action="search.php" method="get">
-								<input type="search" name="q" placeholder="Search">
+								<input type="search" name="q" placeholder="Search" autocomplete="off" onkeyup="showHint(this.value)">
 							</form>
-							<div class="search-results-container">
-								<ul class="search-results">
-									<a href="#"><li>1</li></a>
-									<a href="#"><li>2</li></a>
-									<a href="#"><li>3</li></a>
+							<div class="search-results-container" id="search-results-container">
+								<ul class="search-results" id="search-results">
 								</ul>
 							</div>
 						</div>

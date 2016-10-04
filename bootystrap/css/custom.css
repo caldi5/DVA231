@@ -300,14 +300,17 @@ a:hover
 {
 	width: 200px;
 	position: absolute;
-	background-color: red;
+	background-color: grey;
 	margin-left: 15px;
 	z-index: 5;
+	overflow: hidden;
+	display: none;
 }
 
 .search-results
 {
 	list-style-type: none;
 	margin: 0;
-	padding: 0;
+	padding: 5px;
+	line-height: 1.7em;
 }

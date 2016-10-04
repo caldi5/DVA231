@@ -15,18 +15,21 @@
 		{
 			while ($row =  $results->fetch_assoc())
 			{
+				$text = $row["text"];
 				echo '<a href="article.php?id='.$row["id"].'">';
-				echo '<div class="article">';
-				echo '<h1>'.$row["title"].'</h1>';
-				echo '<p>'.$row["text"].'</p>';
-				echo '<i>By: '.$row["user"].'</i>';
-				echo '</div>';
+				echo '<li>';
+				if (strlen($text) <= 25)
+				{
+					echo $text;
+				}
+				else
+				{
+					$text = substr($text, 0, 25).'..';
+					echo $text;
+				}
+				echo '</li>';
 				echo '</a>';
 			}
-		}
-		else
-		{
-			echo "No posts found! :(";
 		}
 	}
 	else
