@@ -143,6 +143,13 @@ if(isset($_POST["newsUpload"]))
 							<form action="search.php" method="get">
 								<input type="search" name="q" placeholder="Search">
 							</form>
+							<div class="search-results-container">
+								<ul class="search-results">
+									<a href="#"><li>1</li></a>
+									<a href="#"><li>2</li></a>
+									<a href="#"><li>3</li></a>
+								</ul>
+							</div>
 						</div>
 						<ul class="links nav navbar-nav navbar-right">
 							<li><a href="#">Missions</a></li>

@@ -33,7 +33,5 @@
 	{
 		header("Location: index.php");
 	}
-	
-
 
 ?>
