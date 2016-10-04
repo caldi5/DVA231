@@ -1,62 +1,6 @@
 <?php
 session_start();
 include "dbconn.php";
-
-if(isset($_POST["newsUpload"])) 
-{
-	//Start by checking that they are logged in
-	if(!isset($_SESSION["username"]))
-	{
-		header("location: login.php");;
-	}
-
-	//upload the image/video
-	$error;
-
-	// Check exists
-	if (file_exists("uploads/" . basename($_FILES["fileToUpload"]["name"]))) 
-	{
-		$error = "a file by that name already exists";
-	}
-
-	// Check filesize
-	if ($_FILES["fileToUpload"]["size"] > 500000) 
-	{
-		$error = "File is to big";
-	}
-
-	// Check if file is image or video
-	if(strstr(mime_content_type($_FILES["fileToUpload"]["tmp_name"]), "video/"))
-	{
-    	//Code for video
-	}
-	else if(strstr(mime_content_type($_FILES["fileToUpload"]["tmp_name"]), "image/"))
-	{
-    	//Code for image
-	}
-	else
-	{
-		$error = "uploaded file is not an image or video";
-	}
-
-	if(!isset($error))
-	{
-		//Do the actuall uploading
-		if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], "uploads/" . basename($_FILES["fileToUpload"]["name"]))) 
-		{
-			$image = "uploads/" . basename($_FILES["fileToUpload"]["name"]);
-		}
-		else
-		{
-			$error = "unknown error";
-		}
-	}
-
-	//Text stuff
-	$title = $_POST["title"];
-	$text = $_POST["mainText"];
-
-}
 ?>
 
 <!DOCTYPE html>
