@@ -64,7 +64,7 @@ include "dbconn.php";
 			 	hiddenText.attr('value', texts[0])
 			});
 
-			function showHint(str) 
+			function search(str) 
 			{
 				if (str.length == 0) 
 				{ 
@@ -107,7 +107,7 @@ include "dbconn.php";
 					<div class="row">
 						<div class="search">
 							<form action="search.php" method="get">
-								<input type="search" name="q" placeholder="Search" autocomplete="off" onkeyup="showHint(this.value)">
+								<input type="search" name="q" placeholder="Search" autocomplete="off" onkeyup="search(this.value)">
 							</form>
 							<div class="search-results-container" id="search-results-container">
 								<ul class="search-results" id="search-results">
