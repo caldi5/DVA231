@@ -7,7 +7,7 @@
 		$sql = "SELECT * FROM news WHERE (user LIKE '%$query%'
 		OR title LIKE '%$query%'
 		OR text LIKE '%$query%'
-		)";
+		) LIMIT 4";
 
 		$results = $conn->query($sql);
 
@@ -15,17 +15,17 @@
 		{
 			while ($row =  $results->fetch_assoc())
 			{
-				$text = $row["text"];
+				$title = $row["title"];
 				echo '<a href="article.php?id='.$row["id"].'">';
 				echo '<li>';
-				if (strlen($text) <= 25)
+				if (strlen($title) <= 25)
 				{
-					echo $text;
+					echo $title;
 				}
 				else
 				{
-					$text = substr($text, 0, 25).'..';
-					echo $text;
+					$title = substr($title, 0, 25).'..';
+					echo $title;
 				}
 				echo '</li>';
 				echo '</a>';

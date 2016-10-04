@@ -130,12 +130,14 @@ if(isset($_POST["newsUpload"]))
 				} 
 				else 
 				{
-					document.getElementById("search-results-container").style.display = "block";
+					
 					var xmlhttp = new XMLHttpRequest();
 					xmlhttp.onreadystatechange = function() {
 						if (this.readyState == 4 && this.status == 200) {
 							document.getElementById("search-results").innerHTML = this.responseText;
 						}
+						if(this.responseText != "")
+						document.getElementById("search-results-container").style.display = "inline";
 					};
 					xmlhttp.open("GET", "search.php?q=" + str, true);
 					xmlhttp.send();
